@@ -2,6 +2,8 @@ Student Finance Tracker
 
 demo video link : https://www.loom.com/share/63c1a9ff49cc47079f52f88248be493e
 
+wireframe link : https://docs.google.com/document/d/1j2D6BgDjGmocqCxNMfHiXZn-8WQbXxejon8Ag18hzrw/edit?tab=t.0
+
 A lightweight, accessible single-page web application built with vanilla HTML5, CSS3, and modern ECMAScript modules. The application is designed to help students log, monitor, and categorize personal daily expenses cleanly on a single scrolling page. The system runs entirely client-side without external frameworks, utilizing modern browser capabilities for validation, state management, and accessibility conformance.
 
 Technical Features
