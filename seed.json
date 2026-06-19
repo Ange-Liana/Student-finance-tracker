@@ -1,0 +1,92 @@
+[
+  {
+    "id": "txn_s1",
+    "description": "Campus Bookstore Textbooks",
+    "amount": 124.50,
+    "category": "Books",
+    "date": "2026-06-15",
+    "createdAt": "2026-06-15T10:00:00.000Z",
+    "updatedAt": "2026-06-15T10:00:00.000Z"
+  },
+  {
+    "id": "txn_s2",
+    "description": "Weekly Cafeteria Mealplan",
+    "amount": 65.00,
+    "category": "Food",
+    "date": "2026-06-16",
+    "createdAt": "2026-06-16T11:30:00.000Z",
+    "updatedAt": "2026-06-16T11:30:00.000Z"
+  },
+  {
+    "id": "txn_s3",
+    "description": "Monthly Transit Pass Sub",
+    "amount": 45.00,
+    "category": "Transport",
+    "date": "2026-06-14",
+    "createdAt": "2026-06-14T08:15:00.000Z",
+    "updatedAt": "2026-06-14T08:15:00.000Z"
+  },
+  {
+    "id": "txn_s4",
+    "description": "Engineering Lab Equipment Fees",
+    "amount": 150.00,
+    "category": "Fees",
+    "date": "2026-06-17",
+    "createdAt": "2026-06-17T14:22:00.000Z",
+    "updatedAt": "2026-06-17T14:22:00.000Z"
+  },
+  {
+    "id": "txn_s5",
+    "description": "Off-Campus Group Study Coffee",
+    "amount": 18.75,
+    "category": "Food",
+    "date": "2026-06-18",
+    "createdAt": "2026-06-18T09:05:00.000Z",
+    "updatedAt": "2026-06-18T09:05:00.000Z"
+  },
+  {
+    "id": "txn_s6",
+    "description": "Online Research Database Fee",
+    "amount": 29.99,
+    "category": "Fees",
+    "date": "2026-06-13",
+    "createdAt": "2026-06-13T16:40:00.000Z",
+    "updatedAt": "2026-06-13T16:40:00.000Z"
+  },
+  {
+    "id": "txn_s7",
+    "description": "Weekend Film Screening Event",
+    "amount": 15.00,
+    "category": "Entertainment",
+    "date": "2026-06-19",
+    "createdAt": "2026-06-19T20:10:00.000Z",
+    "updatedAt": "2026-06-19T20:10:00.000Z"
+  },
+  {
+    "id": "txn_s8",
+    "description": "Desk Organizer Stationery Supply",
+    "amount": 22.40,
+    "category": "Other",
+    "date": "2026-06-15",
+    "createdAt": "2026-06-15T14:00:00.000Z",
+    "updatedAt": "2026-06-15T14:00:00.000Z"
+  },
+  {
+    "id": "txn_s9",
+    "description": "Replacement Campus ID Smartcard",
+    "amount": 20.00,
+    "category": "Fees",
+    "date": "2026-06-16",
+    "createdAt": "2026-06-16T10:12:00.000Z",
+    "updatedAt": "2026-06-16T10:12:00.000Z"
+  },
+  {
+    "id": "txn_s10",
+    "description": "Gym Locker Security Padlock",
+    "amount": 12.00,
+    "category": "Other",
+    "date": "2026-06-18",
+    "createdAt": "2026-06-18T11:45:00.000Z",
+    "updatedAt": "2026-06-18T11:45:00.000Z"
+  }
+]
