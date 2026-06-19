@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Finance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="#primary-view" class="skip-link">Skip to main content</a>
+
+    <header class="app-header">
+        <div class="header-container">
+            <h1>Student Finance Tracker</h1>
+            <nav class="app-nav">
+                <a href="#panel-about" class="nav-btn">About</a>
+                <a href="#panel-dashboard" class="nav-btn">Dashboard</a>
+                <a href="#panel-records" class="nav-btn">Expenses</a>
+                <a href="#panel-form" class="nav-btn">Add New</a>
+                <a href="#panel-settings" class="nav-btn">Settings</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="primary-view" class="main-wrapper">
+        <div id="live-alert-region" class="sr-only" aria-live="assertive"></div>
+
+        <section id="panel-about" class="view-panel">
+            <h2>Project Overview</h2>
+            <div class="card">
+                <p>This is a simple personal budget application built to track daily student expenses, calculate exchange rates, and monitor spending limits.</p>
+                <h3>Developer Contact</h3>
+                <p>Email: <a href="mailto:l.batsinde@alustudent.com">l.batsinde@alustudent.com</a></p>
+            </div>
+        </section>
+
+        <section id="panel-dashboard" class="view-panel">
+            <h2>Dashboard Metrics</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>Total Entries</h3>
+                    <p id="stat-total-records">0</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Total Spent</h3>
+                    <p id="stat-sum-field">$0.00</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Top Category</h3>
+                    <p id="stat-top-tag">None</p>
+                </div>
+            </div>
+
+            <div class="card notification-zone" id="budget-cap-feedback">
+                <p>Status: Monitoring budget threshold limits.</p>
+            </div>
+
+            <div class="card">
+                <h3>7-Day Spending Breakdown</h3>
+                <table class="data-table simplified-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Total Expenses</th>
+                        </tr>
+                    </thead>
+                    <tbody id="daily-summary-tbody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="panel-records" class="view-panel">
+            <h2>Expense Catalog</h2>
+            
+            <div class="filter-controls">
+                <div class="control-group">
+                    <label for="search-input">Search Filter</label>
+                    <input type="text" id="search-input" placeholder="Type keywords...">
+                </div>
+                <div class="control-group check-row">
+                    <input type="checkbox" id="search-case-toggle" checked>
+                    <label for="search-case-toggle">Ignore Case</label>
+                </div>
+            </div>
+
+            <div class="sorting-row">
+                <label for="sort-select-field">Sort By</label>
+                <select id="sort-select-field">
+                    <option value="date-desc">Date (Newest First)</option>
+                    <option value="date-asc">Date (Oldest First)</option>
+                    <option value="alpha-asc">Description (A to Z)</option>
+                    <option value="alpha-desc">Description (Z to A)</option>
+                    <option value="num-asc">Amount (Low to High)</option>
+                    <option value="num-desc">Amount (High to Low)</option>
+                </select>
+            </div>
+
+            <div class="table-scroll-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Converted Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="records-table-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="panel-form" class="view-panel">
+            <h2 id="form-heading-context">Log New Expense</h2>
+            <form id="transaction-entry-form" novalidate class="entry-form">
+                <input type="hidden" id="field-target-id" value="">
+                
+                <div class="form-element">
+                    <label for="field-description">Description</label>
+                    <input type="text" id="field-description" required>
+                    <span class="field-error-msg" id="err-description"></span>
+                </div>
+
+                <div class="form-element">
+                    <label for="field-numeric">Amount ($)</label>
+                    <input type="text" id="field-numeric" required placeholder="0.00">
+                    <span class="field-error-msg" id="err-numeric"></span>
+                </div>
+
+                <div class="form-element">
+                    <label for="field-date">Date</label>
+                    <input type="text" id="field-date" required placeholder="YYYY-MM-DD">
+                    <span class="field-error-msg" id="err-date"></span>
+                </div>
+
+                <div class="form-element">
+                    <label for="field-category">Category</label>
+                    <input type="text" id="field-category" required placeholder="e.g. Food, Transport, Rent">
+                    <span class="field-error-msg" id="err-category"></span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" id="form-submit-btn">Save Expense</button>
+                    <button type="button" class="btn btn-secondary" id="form-reset-btn">Clear Form</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="panel-settings" class="view-panel">
+            <h2>Settings & Variables</h2>
+            
+            <div class="card">
+                <h3>Spending Limit Alert</h3>
+                <div class="form-element">
+                    <label for="setting-budget-cap">Warning Limit Limit ($)</label>
+                    <input type="number" id="setting-budget-cap" value="500">
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Currency Exchange Rates</h3>
+                <div class="form-element">
+                    <label for="setting-rate-eur">Exchange Rate (1 USD to EUR)</label>
+                    <input type="number" id="setting-rate-eur" step="0.01" value="0.92">
+                </div>
+                <div class="form-element">
+                    <label for="setting-rate-gbp">Exchange Rate (1 USD to GBP)</label>
+                    <input type="number" id="setting-rate-gbp" step="0.01" value="0.79">
+                </div>
+                <div class="form-element">
+                    <label for="setting-display-currency">Target Currency Display</label>
+                    <select id="setting-display-currency">
+                        <option value="EUR">Euros (EUR)</option>
+                        <option value="GBP">British Pounds (GBP)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Data Backup & Restore</h3>
+                <div class="portability-buttons">
+                    <button type="button" class="btn btn-secondary" id="btn-export-json">Export Data</button>
+                    <label id="import-trigger-label" for="file-input-import" class="btn btn-secondary">Import Data File</label>
+                    <input type="file" id="file-input-import" accept=".json" class="sr-only">
+                </div>
+                <div class="form-element export-wrapper">
+                    <label for="setting-io-area">Data Raw String Output</label>
+                    <textarea id="setting-io-area" rows="4" readonly></textarea>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>Student Finance Tracker Application Dashboard.</p>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
